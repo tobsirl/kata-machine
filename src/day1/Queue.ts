@@ -4,6 +4,8 @@ type QueueNode<T> = {
 };
 export default class Queue<T> {
     public length: number;
+    private head?: QueueNode<T>;
+    private tail?: QueueNode<T>;
 
     constructor() {}
 
