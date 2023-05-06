@@ -13,10 +13,13 @@ export default class Queue<T> {
     }
 
     enqueue(item: T): void {
+        const node = { value: item } as QueueNode<T>;
         this.length++;
         if (!this.tail) {
-            this.head = this.tail = { value: item } as QueueNode<T>;
+            this.head = this.tail = node;
         }
+
+        this.tail.next = node;
     }
 
     // dequeue removes the head node and returns its value
