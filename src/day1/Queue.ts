@@ -20,6 +20,7 @@ export default class Queue<T> {
         }
 
         this.tail.next = node;
+        this.tail = node;
     }
 
     // dequeue removes the head node and returns its value
