@@ -7,7 +7,10 @@ export default class Queue<T> {
     private head?: QueueNode<T>;
     private tail?: QueueNode<T>;
 
-    constructor() {}
+    constructor() {
+        this.length = 0;
+        this.head = this.tail = undefined;
+    }
 
     enqueue(item: T): void {}
     deque(): T | undefined {}
