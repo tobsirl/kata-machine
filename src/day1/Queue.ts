@@ -14,5 +14,7 @@ export default class Queue<T> {
 
     enqueue(item: T): void {}
     deque(): T | undefined {}
-    peek(): T | undefined {}
+    peek(): T | undefined {
+        return this.head?.value;
+    }
 }
