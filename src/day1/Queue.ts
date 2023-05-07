@@ -1,6 +1,6 @@
 type QueueNode<T> = {
     value: T;
-    next?: QueueNode<T> | null;
+    next?: QueueNode<T>;
 };
 export default class Queue<T> {
     public length: number;
@@ -17,6 +17,7 @@ export default class Queue<T> {
         this.length++;
         if (!this.tail) {
             this.head = this.tail = node;
+            return;
         }
 
         this.tail.next = node;
