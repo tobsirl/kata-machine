@@ -22,7 +22,14 @@ export default class Stack<T> {
         node.prev = this.head;
         this.head = node;
     }
-    pop(): T | undefined {}
+
+    pop(): T | undefined {
+        this.length = Math.max(0, this.length - 1);
+        if (this.length === 0) {
+            this.head = undefined;
+        }
+    }
+
     peek(): T | undefined {
         return this.head?.value;
     }
