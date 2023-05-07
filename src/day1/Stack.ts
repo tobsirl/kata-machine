@@ -12,7 +12,18 @@ export default class Stack<T> {
         this.head = undefined;
     }
 
-    push(item: T): void {}
+    push(item: T): void {
+        const node = { value: item } as Node<T>;
+        this.length++;
+        if (!this.head) {
+            this.head = node;
+            return;
+        }
+        node.prev = this.head;
+        this.head = node;
+    }
     pop(): T | undefined {}
-    peek(): T | undefined {}
+    peek(): T | undefined {
+        return this.head?.value;
+    }
 }
