@@ -26,6 +26,9 @@ function walk(
     }
 
     // 4. recursive case
+    if (seen[curr.y][curr.x]) {
+        return false;
+    }
 }
 
 export default function solve(
