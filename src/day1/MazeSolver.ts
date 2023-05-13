@@ -41,6 +41,7 @@ function walk(
 
     // 3 recursive cases
     // pre
+    seen[curr.y][curr.x] = true;
     path.push(curr);
     // recurse
     for (let i = 0; i < dir.length; i++) {
@@ -67,4 +68,7 @@ export default function solve(
     for (let i = 0; i < maze.length; i++) {
         seen.push(new Array(maze[0].length).fill(false));
     }
+
+    walk(maze, wall, start, end, seen, path);
+    return path;
 }
