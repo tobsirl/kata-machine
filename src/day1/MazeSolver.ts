@@ -30,6 +30,13 @@ function walk(
     if (seen[curr.y][curr.x]) {
         return false;
     }
+
+    // 3 recursive cases
+    // pre
+    path.push(curr);
+    // recurse
+    // post
+    path.pop();
 }
 
 export default function solve(
