@@ -44,7 +44,11 @@ function walk(
     // recurse
     for (let i = 0; i < dir.length; i++) {
         const [x, y] = dir[i];
-        walk(maze, wall, { x: curr.x + x, y: curr.y + y }, end, seen, path);
+        if (
+            walk(maze, wall, { x: curr.x + x, y: curr.y + y }, end, seen, path)
+        ) {
+            return true;
+        }
     }
 
     // post
