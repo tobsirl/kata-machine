@@ -4,6 +4,7 @@ function walk(
     curr: Point,
     end: Point,
     seen: boolean[][],
+    path: Point[],
 ): boolean {
     // 1. base case off the map
     if (
