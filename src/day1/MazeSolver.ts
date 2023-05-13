@@ -30,6 +30,7 @@ function walk(
 
     // 3. base case found the end
     if (curr.x === end.x && curr.y === end.y) {
+        path.push(end);
         return true;
     }
 
@@ -60,4 +61,10 @@ export default function solve(
     wall: string,
     start: Point,
     end: Point,
-): Point[] {}
+): Point[] {
+    const seen: boolean[][] = [];
+    const path: Point[] = [];
+    for (let i = 0; i < maze.length; i++) {
+        seen.push(new Array(maze[0].length).fill(false));
+    }
+}
