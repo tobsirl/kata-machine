@@ -55,6 +55,7 @@ function walk(
 
     // post
     path.pop();
+    return false;
 }
 
 export default function solve(
