@@ -1,3 +1,10 @@
+const dir = [
+    [0, 1], // right
+    [1, 0], // down
+    [0, -1], // left
+    [-1, 0], // up
+];
+
 function walk(
     maze: string[],
     wall: string,
@@ -35,6 +42,18 @@ function walk(
     // pre
     path.push(curr);
     // recurse
+    for (let i = 0; i < dir.length; i++) {
+        const [x, y] = dir[i];
+        walk(
+            maze,
+            wall,
+            { x: curr.x + dir[i][0], y: curr.y + dir[i][1] },
+            end,
+            seen,
+            path,
+        );
+    }
+
     // post
     path.pop();
 }
