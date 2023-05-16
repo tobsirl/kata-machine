@@ -1,4 +1,13 @@
-function qs(arr: number[], low: number, high: number): void {}
+function qs(arr: number[], low: number, high: number): void {
+    if (low >= high) {
+        return;
+    }
+
+    const pivotIdx = partition(arr, low, high);
+
+    qs(arr, low, pivotIdx - 1);
+    qs(arr, pivotIdx + 1, high);
+}
 
 function partition(arr: number[], low: number, high: number): number {
     const pivot = arr[high];
