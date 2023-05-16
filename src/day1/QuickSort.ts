@@ -13,6 +13,11 @@ function partition(arr: number[], low: number, high: number): number {
             arr[idx] = temp;
         }
     }
+
+    idx++;
+    arr[high] = arr[idx];
+    arr[idx] = pivot;
+    return idx;
 }
 
 export default function quick_sort(arr: number[]): void {
